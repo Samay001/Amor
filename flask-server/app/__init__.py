@@ -9,9 +9,9 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True 
     
     db.init_app(app)
-    # migrate.init_app(app, db)
-    
-    my_api.add_namespace(auth)
+    migrate.init_app(app, db)
     my_api.init_app(app)
+    
+    my_api.add_namespace(auth, path='/api/auth')
 
     return app
