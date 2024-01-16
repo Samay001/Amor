@@ -1,6 +1,7 @@
 from flask import Flask
-from .extensions import db, migrate, api
+from .extensions import db, migrate, my_api
 from .api.auth import auth                                                                                          
+
 
 def create_app():
     app = Flask(__name__)
@@ -8,9 +9,9 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True 
     
     db.init_app(app)
-    migrate.init_app(app, db)
-    api.init_app(app)
+    # migrate.init_app(app, db)
     
-    api.add_namespace(auth, path='/api/auth')
+    my_api.add_namespace(auth)
+    my_api.init_app(app)
 
     return app
