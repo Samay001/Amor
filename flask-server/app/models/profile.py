@@ -9,8 +9,6 @@ class Profile(db.Model):
     gender = db.Column(db.String(80))
     description = db.Column(db.String(80))
     updated_at = db.Column(db.DateTime, default=db.func.now())
-    
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user = db.relationship('User', backref='profile')
 
     
