@@ -1,6 +1,6 @@
 import React from 'react'
-import {View , Text} from 'react-native'
-import WelcomeScreen from '../screen/WelcomeScreen.js'
+// import {View , Text} from 'react-native'
+import WelcomeScreen from '../screen/WelcomeScreen'
 import LoginScreen from '../screen/LoginScreen'
 import RegisterScreen from '../screen/RegisterScreen'
 import HomeScreen from '../screen/HomeScreen.js'
@@ -11,6 +11,7 @@ import ProfileScreen from '../screen/ProfileScreen'
 import FeedbackScreen from '../screen/FeedbackScreen.js'
 import SettingScreen from '../screen/SettingScreen.js'
 import PersonalDetailsScreen from '../screen/PersonalDetailsScreen.js'
+import SplashScreenComponent from '../screen/SplashScreenComponent.js'
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -24,7 +25,6 @@ const appNavigation = () => {
   const HomeTabs = () => {
     return (
       <Tab.Navigator>
-        {/* <Tab.Screen name="home" component={HomeScreen} /> */}
         <Tab.Screen name="dating" component={DatingScreen} />
         <Tab.Screen name="chat" component={ChatScreen} />
         <Tab.Screen name="secretCrush" component={SecretCrushScreen} />
@@ -46,9 +46,13 @@ const appNavigation = () => {
   return (
     <NavigationContainer> 
       <Stack.Navigator 
-        initialRouteName="welcome"
+        initialRouteName="splash"
+        screenOptions={{
+          headerShown: false
+        }}
       >
-        <Stack.Screen name="welcome" component={WelcomeScreen} />
+        <Stack.Screen name="splash" component={SplashScreenComponent} />
+        <Stack.Screen name="welcome" component={WelcomeScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="login" component={LoginScreen} />
         <Stack.Screen name="register" component={RegisterScreen} />
         <Stack.Screen name="home" component={HomeScreen} />
