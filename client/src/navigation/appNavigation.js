@@ -12,6 +12,8 @@ import FeedbackScreen from '../screen/FeedbackScreen.js'
 import SettingScreen from '../screen/SettingScreen.js'
 import PersonalDetailsScreen from '../screen/PersonalDetailsScreen.js'
 import SplashScreenComponent from '../screen/SplashScreenComponent.js'
+import OtpScreen from '../screen/OtpScreen.js'
+import UserInfoScreen from '../screen/UserInfoScreen.js'
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -55,6 +57,8 @@ const appNavigation = () => {
         <Stack.Screen name="welcome" component={WelcomeScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="login" component={LoginScreen} />
         <Stack.Screen name="register" component={RegisterScreen} />
+        <Stack.Screen name="otp" component={OtpScreen} />
+        <Stack.Screen name="userInfo" component={UserInfoScreen} />
         <Stack.Screen name="home" component={HomeScreen} />
         <Stack.Screen name="dating" component={DatingScreen} />
         <Stack.Screen name="chat" component={ChatScreen} />

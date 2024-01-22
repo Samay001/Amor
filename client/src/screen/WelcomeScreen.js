@@ -2,9 +2,8 @@ import React, {useEffect} from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import logo from '../../assets/images/logo.png';
 import getStarted from '../../assets/images/getStarted.png';
-// import * as SplashScreen from "expo-splash-screen";
 import {useFonts} from 'expo-font';
-// import SplashScreenComponent from './SplashScreenComponent';
+
 
 const WelcomeScreen = ({ navigation }) => {
 
@@ -12,12 +11,6 @@ const WelcomeScreen = ({ navigation }) => {
     gilmerBold: require("../../assets/fonts/gilmer-bold.otf"),
     gilmerRegular: require("../../assets/fonts/gilmer-regular.otf"),
   });
-
-  // const onLayoutRootView = () => {
-  //   if (fontsLoaded || fontError) {
-  //     setSplashVisible(false);
-  //   }
-  // };
 
   if (!fontsLoaded) {
     return null;
